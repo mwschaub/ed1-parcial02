@@ -11,7 +11,8 @@ public class E02Logger {
 
     public boolean shouldPrintMessage(int timestamp, String message) {
         if (!mensajeTimestamp.containsKey(message) || timestamp >= mensajeTimestamp.get(message)) {
-        mensajeTimestamp.put(message, timestamp + 10);
+            //hacemos la comparación para ver si el mensaje no está o si ya pasaron 10 segundos
+            mensajeTimestamp.put(message, timestamp + 10);
             return true;
         }
         return false;
